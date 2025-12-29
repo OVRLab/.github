@@ -1,6 +1,6 @@
 # OVRLab — Web 5.0 Client-Powered Cloud Network
 
-OVRLab is a research and engineering lab exploring **Web 5.0**: a new paradigm where **clients are the cloud**. Instead of relying on centralized application servers, we build systems where user devices coordinate directly—using cryptography for trust and minimal infrastructure only for availability.
+OVRLab is a research and engineering lab exploring **Web 5.0**: a new paradigm where **clients are the cloud**. Instead of relying on centralized application servers, we build systems where user devices coordinate directly, using cryptography for trust and minimal infrastructure only for availability.
 
 ## What we’re building
 
