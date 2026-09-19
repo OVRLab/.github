@@ -1,36 +1,41 @@
-# OVRLab — Web 5.0 Client-Powered Cloud Network
+# OVRLab — Open Virtual Research Lab
 
-OVRLab is a research and engineering lab exploring **Web 5.0**: a new paradigm where **clients are the cloud**. Instead of relying on centralized application servers, we build systems where user devices coordinate directly, using cryptography for trust and minimal infrastructure only for availability.
+We research AI and software systems: how coding agents work, how agents communicate, and the infrastructure they depend on. Based in the Netherlands, OVRLab develops research prototypes and software across four projects.
 
-## What we’re building
+[Explore the lab](https://ovrlab.io) · [Publications](https://ovrlab.io/publications) · [RSS](https://ovrlab.io/feed.xml)
 
-We’re prototyping **Peer-Queue-Peer (PqP)**: a decentralized communication model that combines peer-to-peer principles with cloud-mediated messaging to remove traditional servers while retaining reliable connectivity.
+## Projects
 
-High-level ideas:
+### <img src="https://ovrlab.io/projects/sanad.svg" width="28" height="28" alt="" /> Sanad
 
-- **Peers run the logic**: each client owns its identity and executes the protocol locally.
-- **Cloud is an untrusted relay**: encrypted messages travel through ephemeral cloud queues and a stateless worker, which cannot read message contents.
-- **DNS as a directory**: peers publish presence and public keys via DNS TXT records to discover each other globally without custom bootstrap servers.
-- **End-to-end security**: signatures + encryption ensure integrity and confidentiality regardless of the relay.
+Research into coding-agent behavior and model coordination, alongside tools for using open-weight models in the terminal, VS Code, and API workflows. Sanad 0.1 investigates whether models can improve software work by exchanging direction while they are still reasoning.
 
-## Architecture (high level)
+[Read the project](https://ovrlab.io/projects/sanad) · [Sanad.dev](https://sanad.dev) · [Sanad 0.1 research preview](https://sanad.dev/blog/sanad-0.1)
 
-```mermaid
-flowchart LR
-  Peer1[Peer Client] -->|E2E encrypted msg| Worker[Stateless Worker]
-  Worker --> Queue2[(Recipient Queue)]
-  Peer2[Peer Client] -->|reads| Worker
-  Peer1 <-->|public keys & presence| DNS[(DNS TXT Records)]
-  Peer2 <-->|public keys & presence| DNS
-```
+### <img src="https://ovrlab.io/projects/pqp.svg" width="28" height="28" alt="" /> PqP Network
 
-## Components
+Communication infrastructure for AI agents across devices, owners, and interrupted connections. PqP combines queued messages with direct peer connections. Its client-powered networking work provides the foundation for a new research direction: agents exchanging tasks and results across independently operated systems. Agent interoperability is planned; the network remains a research prototype.
 
-- **Cloud Worker** — Minimal API surface for queue operations and DNS updates.
-- **PqP Network Library** — Shared client library implementing discovery, encryption, message envelopes, and orchestration.
-- **Browser Extension Client** — Browser-based peer node (Chrome extension).
-- **Electron Desktop Client** — Cross-platform peer node (desktop app).
+[Read the project](https://ovrlab.io/projects/pqp) · [The agent-network direction](https://ovrlab.io/publications/pqp-network-for-ai-agents)
 
-## Status
+### <img src="https://ovrlab.io/projects/secretproxy.svg" width="28" height="28" alt="" /> SecretProxy
 
-These repositories are currently in an **early/prototype phase** and may change quickly as the research evolves.
+Credential isolation for applications and agents. Applications send placeholders; SecretProxy replaces them with real credentials on the way to an allowed API target. Target bindings, versioned secrets, and credential rotation keep that responsibility outside the application runtime.
+
+[Read the project](https://ovrlab.io/projects/secretproxy) · [SecretProxy.io](https://secretproxy.io) · [Documentation](https://docs.secretproxy.io)
+
+### <img src="https://ovrlab.io/projects/ultranow.svg" width="28" height="28" alt="" /> UltraNow
+
+Time-limited Google license access for teams. UltraNow connects approvals, bounded access sessions, capacity controls, and usage records so teams can activate access when it is needed and release it when the session ends.
+
+[Read the project](https://ovrlab.io/projects/ultranow) · [UltraNow.app](https://ultranow.app)
+
+## Publications
+
+We publish research notes and project updates about the work as it develops: the question, the implementation, and what remains to be tested. The archive brings together milestones across all four projects and will also host future research papers and newsletter editions.
+
+[Browse publications](https://ovrlab.io/publications) or [follow the RSS feed](https://ovrlab.io/feed.xml).
+
+## Contact
+
+For research and collaboration enquiries, contact [hello@ovrlab.io](mailto:hello@ovrlab.io).
